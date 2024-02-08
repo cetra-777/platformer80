@@ -6,7 +6,6 @@
 # version: 0.1
 # script:  ruby
 
-# test
 class Projectile
   attr_accessor :x, :y, :dx, :dy, :active, :flip
 
@@ -20,7 +19,7 @@ class Projectile
   end
 
   def drawProjectile()
-    spr(@sprite, @x, @y, -1, 1, @flip)
+    spr(@sprite, @x, @y, 0, 1, @flip)
   end
 end
 
@@ -68,7 +67,7 @@ class Player
       @sprite = 261
       @divisor = 30
     end
-    spr(@sprite + ($t % 60).div(@divisor), @x, @y, -1, 1, @flip)
+    spr(@sprite + ($t % 60).div(@divisor), @x, @y, 0, 1, @flip)
   end
 
   def movePlayer()
