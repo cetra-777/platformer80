@@ -6,6 +6,7 @@
 # version: 0.1
 # script:  ruby
 
+# test
 class Projectile
   attr_accessor :x, :y, :dx, :dy, :active, :flip
 
