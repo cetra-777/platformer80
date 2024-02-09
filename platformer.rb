@@ -6,6 +6,8 @@
 # version: 0.1
 # script:  ruby
 
+# Video 12
+
 class Projectile
   attr_accessor :x, :y, :dx, :dy, :active, :flip
 
@@ -155,6 +157,20 @@ def solidTile?(x, y)
   return mget(x.div(8), y.div(8)).between?(1, 64)
 end
 
+def randomTile(player)
+  solidHere = true
+  playerHereX = true
+  playerHereY = true
+
+  while solidHere or (playerHereX and playerHereY)
+    newX = rand(4, 229)
+    newY = rand(4, 125)
+
+    playerHereX = player.x == newX
+    playerHereY = player.y == newY
+  end
+end
+
 # Constants
 $GRAVITY = 0.2
 
@@ -238,4 +254,3 @@ end
 # <PALETTE>
 # 000:1a1c2c5d275db13e5375481ee5c7a0a7f07038b76425717929366f3b5dc941a6f673eff7f4f4f494b0c2566c86333c57
 # </PALETTE>
-
